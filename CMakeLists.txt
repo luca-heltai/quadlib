@@ -43,5 +43,6 @@ COMPILE_FLAGS "${CMAKE_CXX_FLAGS_RELEASE}")
 include(cmake/documentation.cmake)
 include(cmake/install.cmake)
 
+add_subdirectory(test)
 
 #EOF

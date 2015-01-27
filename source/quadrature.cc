@@ -48,3 +48,8 @@ Quadrature<dim>::Quadrature (const std::vector<Point<dim> > &points,
         ExcDimensionMismatch(weights.size(), points.size()));
 }
 
+
+template class Quadrature<0>;
+template class Quadrature<1>;
+template class Quadrature<2>;
+template class Quadrature<3>;

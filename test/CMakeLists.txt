@@ -7,20 +7,16 @@
 
 cmake_minimum_required (VERSION 2.6)
 
-project (Test)
 enable_testing()
 
+file(GLOB _test_files ${CMAKE_SOURCE_DIR}/test/*cc)
 
-add_executable(test_test test_test.cpp)
-add_executable(point_1 point_1.cc)
-add_executable(quadrature_test quadrature_test.cc)
-
+foreach(_test ${_test_files})
+GET_FILENAME_COMPONENT(_test_name ${_test} NAME_WE)
 # test:
-
-add_test (test0 test_test)
-
-add_test (point0 point_1)
-add_test (point1 ${CMAKE_COMMAND} -E compare_files point_1.ouput temp.output)
-
-add_test (quadrature_test0 quadrature_test)
-add_test (quadrature_test0 ${CMAKE_COMMAND} -E compare_files quadrature.ouput temp.output)
+MESSAGE("Testing ${_test_name}, with file ${_test}")
+add_executable(${_test_name}.exe ${_test})
+add_test (${_test_name} ${_test_name}.exe)
+add_test (${_test_name} ${CMAKE_COMMAND} -E compare_files 
+	  ${_test_name}.output temp.output)
+endforeach()
