@@ -19,7 +19,7 @@
 #include "exceptions.h"
 #include <cmath>
 #include <ostream>
-
+#include <string>
 
 /**
  * The <tt>Point</tt> class provides for a point or vector in a space with

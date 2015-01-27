@@ -1,5 +1,5 @@
 
-#include "include/point.h"
+#include "point.h"
 
 template class Point<1, double>;
 template class Point<2, double>;

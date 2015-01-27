@@ -7,6 +7,7 @@
 *    @date    2015.1.~27
 */ 
 #include <exception>
+#include <string>
 /**
 * This class is the base class for all exception classes. Do not use
 * its methods and variables directly since the interface and
@@ -30,6 +31,18 @@
     const type3 arg3;                                                     \
   }
 
+#define DeclException1(Exception1, type1, outsequence)                    \
+  class Exception1 : public ExceptionBase {                       \
+  public:                                                                 \
+    Exception1 (const type1 a1) : arg1 (a1) {}                            \
+    virtual ~Exception1 () throw () {}                                    \
+    virtual void print_info (std::ostream &out) const {                   \
+      out outsequence << std::endl;                                       \
+    }                                                                     \
+  private:                                                                \
+    const type1 arg1;                                                     \
+  }
+
 /**
 * Special assertion for index range of nonnegative indices.
 *
@@ -51,6 +64,12 @@
 
 #define AssertIndexRange(index,range) Assert((index) < (range), ExcIndexRange((index),0,(range))) {}
 
+#define AssertDimension(dim1,dim2) Assert((dim1) == (dim2),       \
+	                 ExcMessage("Wrong dimensions"))
+
+DeclException1 (ExcMessage,
+	        std::string,
+		<< arg1);
 
 namespace StandardExceptions
 {
