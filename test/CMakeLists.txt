@@ -4,11 +4,12 @@
 #if(COMPILE_SUCCEEDED)
 #  message("Success!")
 #endif()
+
 cmake_minimum_required (VERSION 2.6)
 
 project (Test)
-
 enable_testing()
+
 
 add_executable(test_test test_test.cpp)
 add_executable(point_1 point_1.cc)

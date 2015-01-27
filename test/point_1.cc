@@ -30,7 +30,7 @@ void check ( std::ofstream &temp )
     p(i) = i;
 
   for (unsigned int i=0; i<dim; ++i)
-    temp << "QLIB::" << p[i] << ' ';
+    temp << "QLIB::" << p(i) << ' ';
   temp << std::endl;
 }
 
