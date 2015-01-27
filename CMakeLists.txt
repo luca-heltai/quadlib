@@ -26,7 +26,7 @@ file(GLOB _files source/*cc)
 include_directories(include)
 
 include_directories(./)
-add_library(quadrature-lib SHARED ${_files})
+
 
 set(CMAKE_CXX_FLAGS_DEBUG:STRING=-g -DDEBUG)
 set(CMAKE_CXX_FLAGS_RELEASE:STRING=-O3)
