@@ -1,3 +1,5 @@
+#ifndef __exceptions_h__
+#define __exceptions_h__
 /*!
 *    @file    MyHeaderFile.h
 *    @brief   Brief header file description
@@ -60,3 +62,4 @@ namespace StandardExceptions
 	DeclException0 (ExcInvalidConstructorCall);
 }
 
+#endif

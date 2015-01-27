@@ -20,8 +20,7 @@
 // until which they integrate exactly
 
 
-//#include "../tests.h"
-#include "../include/quadrature.h"
+#include "quadrature.h"
 #include <iomanip>
 #include <fstream>
 #include <cmath>
@@ -45,8 +44,8 @@ template <int dim>
 void
 fill_vector (std::vector<Quadrature<dim> *> &quadratures)
 {
-  quadratures.push_back (new QMidpoint<dim>());
-  quadratures.push_back (new Quadrature(QMidpoint<dim>()));
+  quadratures.push_back (new Quadrature<dim>(QMidpoint<dim>()));
+  quadratures.push_back (new Quadrature<dim>(QMidpoint<dim>()));
 }
 
 template <int dim>
